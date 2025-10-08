@@ -45,7 +45,11 @@ TELEGRAM_BOT_TOKEN=ваш_токен_бота
 - TELEGRAM_BOT_TOKEN — получите в @BotFather в Telegram.
 
 ## 5. Запуск бота
-В окне отдельного терминала запустите сервер:
+
+Скачайте ollama  по адресу: https://github.com/ollama/ollama/releases/tag/v0.12.3
+Выполните установку ollama (для развертывания модели Llama3.1 понадобится 10ГБ дисковой памяти) 
+
+После установки ollama в окне отдельного терминала запустите сервер:
 ```bash
 ollama serve
 ```
