@@ -10,7 +10,7 @@ Telegram-бот - консультант по курсам повышения к
 ### 1. Скачайте и распакуйте файлы проекта, откройте папку в VsCode.  
 Или используйте консоль для клонирования репозитория:
 ```
-git clone https://github.com/labintsev/python-telegram-ai-bot.git
+git clone https://github.com/informdep1903-sudo/python-telegram-ai-bot
 cd python-telegram-ai-bot
 ```
 

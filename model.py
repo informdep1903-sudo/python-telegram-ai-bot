@@ -1,5 +1,4 @@
 import ollama    # Библиотека для работы с Ollama API и совместимыми API
-# import dotenv     # Библиотека для загрузки переменных окружения из .env файла
 import logging    # Стандартная библиотека Python для логирования
 
 
@@ -52,7 +51,7 @@ class OllamaService:
         print(f"Сообщения для Ollama: {messages}") # Контрольная печать 
         try:
             # Передача ollama.chat структурированного промпта и получение ответа
-            response = ollama.chat(model=self.model, messages=messages,temperature=0.3, base_url=self.base_url)
+            response = ollama.chat(model=self.model, messages=messages)
             return response['message']['content']
         except Exception as e:
             # Логируем ошибку и возвращаем сообщение об ошибке

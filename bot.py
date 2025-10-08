@@ -91,8 +91,9 @@ async def main() -> None:
 
     # Запуск бота в режиме постоянного ожидания команд.
     # Бот работает до остановки программы (нажатие Ctrl-C )
-    await application.run_polling(allowed_updates=Update.ALL_TYPES)
     print("Бот запущен...")
+    await application.run_polling(allowed_updates=Update.ALL_TYPES)
+    
 
 if __name__ == "__main__":
     import asyncio
