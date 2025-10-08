@@ -45,6 +45,33 @@ TELEGRAM_BOT_TOKEN=ваш_токен_бота
 - TELEGRAM_BOT_TOKEN — получите в @BotFather в Telegram.
 
 ## 5. Запуск бота
+В окне отдельного терминала запустите сервер:
+```bash
+ollama serve
+```
+В окне терминала VScode загрузите и запустите модель LLM:
+```bash
+ollama pull llama3.1:latest
+ollama run llama3.1:latest
+```
+Когда модель работает, то ввод /? отображает доступные команды для управления моделью:
+```bash
+Available Commands:
+  /set            Set session variables
+  /show           Show model information
+  /load <model>   Load a session or model
+  /save <model>   Save your current session
+  /clear          Clear session context
+  /bye            Exit
+  /?, /help       Help for a command
+  /? shortcuts    Help for keyboard shortcuts
+
+Use """ to begin a multi-line message.
+
+>>> 
+```
+Введите команду /bye, вернуться в терминал.
+
 Запустите бота командой:
 ```bash
 python bot.py
