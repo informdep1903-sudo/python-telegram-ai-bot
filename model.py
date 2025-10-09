@@ -18,7 +18,7 @@ class OllamaService:
         """
         
         try:   
-        # Читаем системный промпт из файла и сохраняем его в  sys_prompt
+        # Читаем системный промт из файла и сохраняем его в  sys_prompt
             with open(prompt_file, encoding='utf-8') as f:
                 print("Системный промпт загружен.")
                 self.sys_prompt = f.read()
@@ -42,16 +42,22 @@ class OllamaService:
             str: Ответ Ollama.
         """
         
-        # Формируем промпт для отправки в API LLM со структурой:
+        # Формируем промт для отправки в API LLM со структурой:
             # - системный промпт: {"role": "system", "content": self.sys_prompt}
             # - последние 4 сообщения из истории диалога, например:
             #  [{"role": "user", "content": "Привет"}, {"role": "assistant", "content": "Здравствуйте"},...]
             # - текущее сообщение пользователя: {"role": "user", "content": message}
         messages = [{"role": "system", "content": self.sys_prompt}] + history[-4:] + [{"role": "user", "content": message}]
         print(f"Сообщения для Ollama: {messages}") # Контрольная печать 
+
+        # Опции для настройки поведения модели
+        custom_options = {
+        "temperature": 0.5 # Контролирует креативность ответов модели (0.0 - более точные, 1.0 - более креативные; по умолчанию 0.7)
+        }
+
         try:
-            # Передача ollama.chat структурированного промпта и получение ответа
-            response = ollama.chat(model=self.model, messages=messages)
+            # Передача ollama.chat структурированного промта и получение ответа
+            response = ollama.chat(model=self.model, messages=messages, options=custom_options)
             return response['message']['content']
         except Exception as e:
             # Логируем ошибку и возвращаем сообщение об ошибке
@@ -59,7 +65,7 @@ class OllamaService:
             return f"Ошибка при обращении к Ollama: {str(e)}"
 
 
-# Создание экземпляра OllamaService с системным промптом из файла
+# Создание экземпляра OllamaService с системным промтом из файла
 llm_1 = OllamaService('prompts/prompt_2.txt')
 
 
