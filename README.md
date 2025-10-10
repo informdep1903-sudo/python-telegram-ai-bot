@@ -1,9 +1,8 @@
 # Python Telegram AI Bot
 
 Telegram-бот - консультант по курсам повышения квалификации в области программирования. 
-Он использует языковую модель LLama, доступ к ней осуществляется по API. 
-Бот написан на Python и использует библиотеку `python-telegram-bot` для работы с Telegram API и
-библиотеку `ollama` для работы с API LLM Ollama.
+Он использует локально установленную языковую модель LLama. 
+Бот написан на Python и использует библиотеку `python-telegram-bot` для работы с Telegram API и библиотеку `ollama` для работы с API LLM LLama.
 
 ## Инструкции по установке
 
@@ -22,11 +21,11 @@ python -m venv venv
 Активация окружения:
 - На Windows:
   ```bash
-  venv\Scripts\activate
+  .venv\Scripts\activate
   ```
 - На macOS/Linux:
   ```bash
-  source venv/bin/activate
+  source .venv/bin/activate
   ```
 
 ## 3. Установите зависимости
